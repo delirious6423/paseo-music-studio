@@ -41,7 +41,7 @@ Add the three files for each wanted variant:
 | Small SFX | `stable-audio-3-small-sfx-dit-0.5B-v1.0-F16.gguf` | `stable-audio-3-small-sfx-same-s-v1.0-F16.gguf` | `stable-audio-3-small-sfx-conditioner-v1.0-F32.gguf` |
 
 Follow [sa3.cpp's setup instructions](https://github.com/betweentwomidnights/sa3.cpp) and the exact
-model repositories' current terms. Its [model download helper](https://github.com/betweentwomidnights/sa3.cpp/blob/master/models.sh)
+model repositories' current terms. Its [model download helper](https://github.com/betweentwomidnights/sa3.cpp/blob/main/models.sh)
 selects Medium, Small Music or Small SFX with `--variant` and includes the shared T5Gemma files.
 Choose F16 for DiT, SAME and T5Gemma (`--encoding f16 --ae-encoding f16 --t5-encoding f16`);
 the helper’s default autoencoder precision is F32, not Studio’s supported F16 set. Review the
