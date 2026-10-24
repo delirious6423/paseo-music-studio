@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "description": "Guest-only runtime for tests/ui (versions match Paseo's web client: react-dom 19.1.0, react-native-web 0.21)",
+  "dependencies": {
+    "playwright": "1.64.1",
+    "react-dom": "19.1.0",
+    "react-native-web": "0.21.4"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "paseo-music-studio",
+  "description": "A model-agnostic music studio for Paseo: generate, replay and manage music with your own backends",
+  "license": "MIT",
+  "private": true,
+  "version": "0.5.1",
+  "files": [
+    "paseo-plugin.json",
+    "OVERVIEW.md",
+    "index.client.tsx",
+    "index.server.ts",
+    "client/",
+    "server/",
+    "shared/",
+    "README.md",
+    "CONTRIBUTING.md",
+    "RELEASING.md",
+    "docs/",
+    "examples/",
+    "assets/",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bash tests/vm/run.sh",
+    "test:integration": "tsx --test tests/*.test.ts"
+  },
+  "devDependencies": {
+    "@getpaseo/plugin": "0.12.0",
+    "@tanstack/react-query": "^5.90.11",
+    "@types/react": "~19.2.0",
+    "react": "19.1.0",
+    "react-native": "0.81.5",
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3",
+    "@types/node": "^22.0.0",
+    "tsx": "^4.23.15"
+  },
+  "type": "module"
+}

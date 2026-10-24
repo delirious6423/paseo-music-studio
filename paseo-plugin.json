@@ -1,0 +1,7 @@
+{
+  "id": "paseo-music",
+  "name": "Paseo Music Studio",
+  "description": "A model-agnostic music studio for Paseo: generate, replay and manage music with your own backends",
+  "media": ["assets/studio-desktop.png", "assets/minimax-advanced-desktop.png", "assets/minimax-running-phone.png", "assets/studio-phone.png"],
+  "requirements": { "paseo": ">=0.12.0 <0.14.0" }
+}

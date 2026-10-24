@@ -1,0 +1,22 @@
+{
+  "id": "minimax-music3-q8",
+  "label": "MiniMax Music 3 · Q8_0",
+  "backend": "command",
+  "binary": "/absolute/path/to/node",
+  "timeoutSeconds": 3600,
+  "maxDurationSeconds": 360,
+  "minSteps": 2,
+  "defaultSteps": 30,
+  "controls": "minimax",
+  "args": [
+    "/absolute/path/to/paseo-music-studio/examples/minimax-cli.mjs",
+    "--engine", "/absolute/path/to/minimaxmusic.cpp/build/mm-synth",
+    "--models", "/absolute/path/to/MiniMax-Music3-Q8_0",
+    "--device", "CUDA0",
+    "--options-file={minimax}",
+    "--duration", "{duration}",
+    "--steps", "{steps}",
+    "--seed", "{seed}",
+    "--output", "{output}"
+  ]
+}

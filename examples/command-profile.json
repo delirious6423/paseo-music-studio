@@ -1,0 +1,17 @@
+[
+  {
+    "id": "my-music-model",
+    "label": "My music model",
+    "backend": "command",
+    "binary": "/absolute/path/to/python",
+    "args": [
+      "/absolute/path/to/your_generate.py",
+      "--model", "/absolute/path/to/your/local/model",
+      "--prompt={prompt}",
+      "--duration", "{duration}",
+      "--seed", "{seed}",
+      "--output", "{output}"
+    ],
+    "timeoutSeconds": 300
+  }
+]
