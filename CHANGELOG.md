@@ -1,9 +1,12 @@
 # Changelog
 
-Versions below describe local source milestones, not published GitHub or npm releases.
+0.5.1 is the first public GitHub source snapshot. Earlier versions describe local milestones,
+not published releases. No version is published to npm.
 
 ## 0.5.1
 
+- Make the MiniMax example directly pasteable into Settings, validate both example profiles in pure CI,
+  document all five required model files and engine/download sources, and check whitespace in the full source tree.
 - Show MiniMax engine stages, frame budgets, completed per-song windows and elapsed/run-deadline information
   without inventing an overall percentage. Preserve window counters across graph rebuilds and freeze the clock
   before library import. Profile deadlines can exceed one hour within Node’s timer representation.

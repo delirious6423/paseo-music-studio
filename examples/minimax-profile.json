@@ -1,4 +1,4 @@
-{
+[{
   "id": "minimax-music3-q8",
   "label": "MiniMax Music 3 · Q8_0",
   "backend": "command",
@@ -19,4 +19,4 @@
     "--seed", "{seed}",
     "--output", "{output}"
   ]
-}
+}]

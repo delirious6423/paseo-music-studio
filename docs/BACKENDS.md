@@ -106,8 +106,28 @@ as a hardware benchmark or an automatic permission to load a GPU model.
 
 ## MiniMax Music 3 (local Q8_0)
 
+Build `mm-synth` using [minimaxmusic.cpp’s instructions](https://github.com/ServeurpersoCom/minimaxmusic.cpp#build).
+Studio was checked against upstream commit [b260bc3](https://github.com/ServeurpersoCom/minimaxmusic.cpp/commit/b260bc3).
+Obtain the following five files from the [MiniMax Music 3 GGUF distribution](https://huggingface.co/Serveurperso/MiniMax-Music3-GGUF/tree/main)
+and put them together in one folder. These are the exact filenames required by the adapter:
+
+| Component | Filename |
+| --- | --- |
+| Language model | `MiniMax-Music3-language_model-Q8_0.gguf` |
+| Depth decoder | `MiniMax-Music3-rvq_depth_decoder-Q8_0.gguf` |
+| Transformer | `MiniMax-Music3-transformer-Q8_0.gguf` |
+| Condition encoder | `MiniMax-Music3-condition_encoder-F32.gguf` |
+| Vocoder | `MiniMax-Music3-vocoder-F32.gguf` |
+
+The engine is separate MIT-licensed software; model weights have their own terms. Downloads contact
+GitHub/Hugging Face and consume disk space; review their terms before downloading. Studio does not
+install either. To undo, remove only the separately installed engine/weights you no longer need,
+not your Studio music folder.
+
 Use [minimax-profile.json](../examples/minimax-profile.json) with [minimax-cli.mjs](../examples/minimax-cli.mjs).
-Set absolute paths to Node, the adapter, your built `mm-synth`, and the five-file Q8_0 model folder;
+Paste the complete JSON array into **Custom command profiles**. If you already have profiles, merge
+its entry into your existing array instead of replacing it. Set absolute paths to Node, the adapter,
+your built `mm-synth`, and that model folder;
 choose a device supported by that engine build. No installation, account, download or public listener is added.
 The profile declares `controls: "minimax"`, `minSteps: 2`, `defaultSteps: 30` and `maxDurationSeconds: 360`.
 Stable Audio paths and profiles remain independent.

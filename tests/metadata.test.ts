@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { existsSync, lstatSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
+import { commandProfiles } from "../shared/music";
 
 const root = resolve(import.meta.dirname, "..");
 const paths = new Set(["package.json"]);
@@ -35,6 +36,13 @@ test("every relative documentation link ships in the declared package", () => {
   }
   assert.equal(paths.has("PROGRESS.md"), false, "Private development notes must not ship");
   assert.equal(paths.has("PLAN.md"), false, "Private development plans must not ship");
+});
+
+test("example command profiles can be pasted directly into Settings", () => {
+  for (const name of ["command-profile.json", "minimax-profile.json"]) {
+    const profiles = commandProfiles.parse(JSON.parse(readFileSync(join(root, "examples", name), "utf8")));
+    assert(profiles.length > 0, `${name} must contain a usable profile`);
+  }
 });
 
 test("documented VM runner entry points remain directly executable", { skip: process.platform === "win32" }, () => {

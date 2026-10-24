@@ -4,9 +4,9 @@
 npm publication or Paseo registry submission. Keep `package.json` marked `private: true` until a
 separate npm decision is approved. A local name does not establish public name availability.
 
-## Proposed public identity
+## Public source identity
 
-| Field | Recommended value |
+| Field | Value |
 | --- | --- |
 | Product | Paseo Music Studio |
 | Repository / package name | `paseo-music-studio` |
@@ -16,9 +16,9 @@ separate npm decision is approved. A local name does not establish public name a
 | Suggested topics | `paseo`, `paseo-plugin`, `music-generation`, `minimax`, `stable-audio`, `typescript`, `local-ai` |
 | License | MIT for Studio's code; separate engine, dependency and model terms |
 
-Repository URL, owner/scope, name availability and publication date remain unassigned here.
-Recommend **a reviewed public Git repository first**; npm and registry listing are separate options.
-Do not add a fictional clone command, package badge or installation target before one exists.
+Public source: [delirious6423/paseo-music-studio](https://github.com/delirious6423/paseo-music-studio).
+The owner authorized publishing this reviewed Git repository. npm and Paseo registry listing remain
+separate, unapproved actions; keep the npm guard and do not imply either is available.
 
 ## Prepare the clean source snapshot
 
@@ -44,7 +44,8 @@ Static checks from the prepared checkout:
 ```bash
 npm ci --ignore-scripts
 npm run typecheck -- --noUnusedLocals --noUnusedParameters
-git diff --check
+git diff --check "$(git hash-object -t tree /dev/null)" HEAD
+npx --no-install tsx --test tests/metadata.test.ts tests/minimax-progress.test.ts
 npm pack --dry-run --ignore-scripts
 ```
 

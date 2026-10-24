@@ -50,9 +50,11 @@ Review the code first: Paseo plug-ins are trusted, unsandboxed software with the
 filesystem, process and network permissions. Dependencies come from your configured npm registry;
 these commands do not install a music engine or weights.
 
-From your cloned or extracted checkout on the **daemon host**:
+Clone on the **daemon host** (or extract a source archive and skip the first two commands):
 
 ```bash
+git clone https://github.com/delirious6423/paseo-music-studio.git
+cd paseo-music-studio
 npm ci --ignore-scripts
 npm run typecheck
 paseo plugin install "$PWD"
@@ -64,8 +66,9 @@ this guide does not change it. Check that `paseo plugin ls` reports `running`, t
 **Paseo Music Studio** from the sidebar or **Open Paseo Music Studio** from Command Center.
 See [Paseo's installation guide](https://paseo.sh/docs/plugins) if the entry is missing.
 
-No public repository URL, npm package availability or registry listing is claimed here.
-[Release preparation](RELEASING.md) describes the proposed identity and approval gates.
+[Source and issues](https://github.com/delirious6423/paseo-music-studio) are on GitHub.
+There is no published npm package or Paseo registry listing; [release guidance](RELEASING.md)
+keeps those separate from the public source repository.
 The installation's stable runtime ID is `paseo-music`.
 
 ## Make your first track

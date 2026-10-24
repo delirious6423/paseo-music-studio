@@ -2,6 +2,10 @@
   "name": "paseo-music-studio",
   "description": "A model-agnostic music studio for Paseo: generate, replay and manage music with your own backends",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delirious6423/paseo-music-studio.git"
+  },
   "private": true,
   "version": "0.5.1",
   "files": [
